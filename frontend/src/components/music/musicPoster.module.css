@@ -1,0 +1,101 @@
+.musicGalleryContainer {
+  margin-top: 80px; 
+  padding: 20px;
+}
+
+.musicGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 10px;
+  justify-items: center;
+  width: 100%;
+}
+
+.outerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.innerContainer {
+  width: 300px; 
+  height: 450px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.poster {
+  width: 260px; 
+  height: 300px;
+  object-fit: cover; 
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.poster:hover {
+  box-shadow: 0 0 15px #333;
+  border-radius: 15px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+
+
+@media (min-width: 1024px) {
+  .innerContainer {
+    width: 300px; 
+    height: 450px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .innerContainer {
+    width: 90%;
+    height: 90%; 
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.25rem; 
+  }
+
+  .poster {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  .innerContainer {
+    width: 100%; 
+    height: auto;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1rem; 
+  }
+
+  .poster {
+    width: 100%;
+    height: auto;
+    max-width: 250px; 
+  }
+}
