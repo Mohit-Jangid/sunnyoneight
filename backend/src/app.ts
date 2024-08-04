@@ -1,7 +1,7 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import musicRoutes from './routes/track'
 import trackRoutes from './routes/track';
 // import cors from 'cors';
 
@@ -31,3 +31,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+export default (req: VercelRequest, res: VercelResponse) => {
+  app(req, res);
+};

@@ -1,0 +1,60 @@
+.footer {
+    background: none;
+    font-family: FontAwesome;
+    color: #6d6d6d;
+    font-size: 15px;
+    line-height: 15px;
+    height: 45px;
+    width: 360px;
+    position: absolute;
+    bottom: 10px;
+    left: 23px;
+    z-index: 20;
+    transition: all 0.15s linear;
+    transition: bottom 0.3s linear;
+  }
+
+  .icons {
+    font-size: 2rem;
+  }
+  
+  .love:before, .shuffle:before, .repeat:before, .options:before {
+    cursor: pointer;
+    transition: all 0.15s linear;
+  }
+  
+  .love:before {
+    content: "\f08a";
+  }
+  
+  .shuffle:before {
+    content: "\f074";
+  }
+  
+  .repeat:before {
+    content: "\f01e";
+  }
+  
+  .options:before {
+    content: "\f141";
+  }
+  
+  .love:hover:before,
+  .shuffle:hover:before,
+  .repeat:hover:before,
+  .options:hover:before {
+    color: #bbb;
+    transition: all 0.15s linear;
+  }
+  
+  #love:checked ~ label.love:before {
+    content: "\f004";
+    color: #ff564c;
+  }
+  
+  #shuffle:checked ~ label.shuffle:before,
+  #repeat:checked ~ label.repeat:before,
+  #options:checked ~ label.options:before {
+    color: #ff564c;
+  }
+  
