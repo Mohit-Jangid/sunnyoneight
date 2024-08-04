@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://sunnyoneight.vercel.app'
+      '/api': 'https://sunnyoneight-api.vercel.app'
     }
   }
 });
