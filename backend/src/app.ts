@@ -3,13 +3,21 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import trackRoutes from './routes/track';
-// import cors from 'cors';
-
+import cors from 'cors'; // Import cors
 
 dotenv.config();
 
 const app = express();
-// app.use(cors());
+
+// Configure CORS
+const corsOptions = {
+  origin: 'https://sunnyoneight.vercel.app', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions)); // Use CORS middleware
+
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
@@ -26,7 +34,6 @@ app.use('/api', trackRoutes);
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

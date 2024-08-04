@@ -34,7 +34,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = () => {
 
     const fetchMusicData = async () => {
       try {
-        const response = await fetch('/api/tracks');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tracks`);
         const data: Track[] = await response.json();
         setMusicData(data);
         if (data.length > 0) {

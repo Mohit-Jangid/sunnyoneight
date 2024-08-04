@@ -1,19 +1,15 @@
 // src/routes/tracks.ts
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import Track from '../models/track';
 
-const mongoUri = process.env.MONGO_URI;
-
 const router = express.Router();
 
-
-if (!mongoUri) {
-  throw new Error('MONGO_URI is not defined');
-}
-
-mongoose.connect(mongoUri)
+mongoose.connect(process.env.MONGO_URI!)
   .then(() => {
     console.log('MongoDB connected');
   })
